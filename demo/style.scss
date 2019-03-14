@@ -1,10 +1,23 @@
 @import 'variables';
+@import 'loadingAnimation';
 @import 'mixins';
+@import 'fonts';
 /* Extra small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 600px) {
     body {
         background: url("./backgroundPortait.jpg") no-repeat center center fixed;
+    }
+    header{
+        & .name {
+            font-size: 1rem !important;
+        }
+        & .primary {
+            font-size: 0.6rem !important;
+        }
+        & .secondary {
+            font-size: 0.6rem !important;
+        }
     }
 }
 
@@ -14,6 +27,17 @@
     body {
         background: url("./backgroundPortait.jpg") no-repeat center center fixed;
     }
+    header{
+        & .name {
+            font-size: 1rem !important;
+        }
+        & .primary {
+            font-size: 0.6rem !important;
+        }
+        & .secondary {
+            font-size: 0.6rem !important;
+        }
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -21,6 +45,17 @@
 @media only screen and (min-width: 768px) {
     body {
         background: url("./background.jpg") no-repeat center center fixed;
+    }
+    header{
+        & .name {
+            font-size: 2rem !important;
+        }
+        & .primary {
+            font-size: 1rem !important;
+        }
+        & .secondary {
+            font-size: 1rem !important;
+        }
     }
 }
 
@@ -30,6 +65,17 @@
     body {
         background: url("./background.jpg") no-repeat center center fixed;
     }
+    header{
+        & .name {
+            font-size: 2rem !important;
+        }
+        & .primary {
+            font-size: 1rem !important;
+        }
+        & .secondary {
+            font-size: 1rem !important;
+        }
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -38,33 +84,90 @@
     body {
         background: url("./background.jpg") no-repeat center center fixed;
     }
+    header{
+        & .name {
+            font-size: 2rem !important;
+        }
+        & .primary {
+            font-size: 1rem !important;
+        }
+        & .secondary {
+            font-size: 1rem !important;
+        }
+    }
 }
 
 body {
     margin: 0;
     padding: 0;
+    font-family: interRegular;
     @include background-size(cover);
 }
 
+#loading {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $brightGreen;
+    color: white;
+    z-index: 1;
+    div {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
 .mainContainer {
-    width: 80vw;
-    max-width: 80vw;
+    width: 85vw;
+    max-width: 85vw;
     height: 90vh;
     position: absolute;
-    left: 10vw;
+    left: 7.5vw;
     top: 5vh;
     overflow: hidden;
+    header {
+        box-sizing: content-box;
+        min-height: auto;
+        height: auto;
+        width: inherit;
+        max-width: inherit;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        & .name {
+            margin-bottom: 0;
+            font-weight: 800;
+        }
+        & .primary {
+            margin: 0;
+        }
+        & .secondary {
+            margin-top: 0.3rem;
+            font-style: oblique;
+        }
+    }
     #mainPage {
         margin: 0;
         padding: 0;
         transition: all ease-in 800ms;
-        &.hidden{
+        &.hidden {
             margin-left: -200%;
             padding-right: 200%;
         }
+        &.shown {
+            margin-left: 0;
+            padding-right: 0;
+        }
         @include flexbox();
         @include flex-direction(row);
-        @include flex-wrap(wrap);
+        @include flex-wrap(wrap); //background 
         & ::after {
             content: '';
             background: $brightBlue;
@@ -76,33 +179,11 @@ body {
             left: 0;
             z-index: -1;
         }
-        & header {
-            box-sizing: content-box;
-            min-height: auto;
-            height: auto;
-            width: 100%;
-            max-width: 400px;
-            padding: 10px 40px;
-            text-align: left;
-            h3 {
-                margin-bottom: 0;
-            }
-            & .primary {
-                margin: 0;
-                font-weight: bold;
-                font-style: oblique;
-            }
-            & .secondary {
-                margin-top: 1rem;
-                color: $darkGreen;
-                font-style: oblique;
-            }
-        }
         .mobileMenu {
             text-align: left;
             width: 100%;
             height: 70%;
-            .collapse {
+            .nav {
                 position: relative;
                 width: calc(100% - 22px);
                 padding: 10px 10px;
@@ -114,6 +195,7 @@ body {
                     position: absolute;
                     right: 10%;
                     transition: right ease-in 300ms;
+                    background: transparent;
                 }
                 &:hover {
                     .oi {
@@ -123,12 +205,67 @@ body {
             }
         }
     }
-
-    #sidePage{
-        margin-left: 200%;
-        transition: all ease-in 800ms;
-        &.show{
+    #sidePage {
+        &.hidden {
+            margin-left: 200%;
+        }
+        &.shown {
             margin-left: 0;
+        }
+        transition: all ease-in 800ms;
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: inherit;
+        width: inherit;
+        .sidePageContent {
+            max-width: inherit;
+            width: inherit;
+            overflow: auto;
+            header {
+                .nav {
+                    position: relative;
+                    width: calc(100% - 22px);
+                    padding: 10px 10px;
+                    border-bottom: 1px solid $brightBlue;
+                    &:first-child {
+                        border-top: 1px solid $brightBlue;
+                    }
+                    .oi {
+                        position: absolute;
+                        left: 10%;
+                        transition: left ease-in 300ms;
+                        background: transparent;
+                    }
+                    &:hover {
+                        .oi {
+                            left: 1%;
+                        }
+                    }
+                }
+                h3 {
+                    margin-bottom: 0.4rem !important;
+                }
+                .name {
+                    margin-top: 0.4rem !important;
+                }
+            }
+            table {
+                font-size: 0.8rem;
+                border-collapse: collapse;
+                td,
+                th {
+                    border: 1px solid #dddddd;
+                    text-align: left;
+                    padding: 8px;
+                }
+                tr:nth-child(even) {
+                    background-color: $brightGreen;
+                }
+            }
+            @include flexbox();
+            @include flex-direction(row);
+            @include flex-wrap(wrap);
         }
     }
 }

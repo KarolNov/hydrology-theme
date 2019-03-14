@@ -1,0 +1,20 @@
+.ahhTudkw_0{
+    stroke-dasharray:434 436;
+    stroke-dashoffset: 435;
+    animation:ahhTudkw_draw_0 2300ms linear 0ms infinite;
+}
+@keyframes ahhTudkw_draw{
+    100%{
+        stroke-dashoffset:0;
+    }
+}
+
+@keyframes ahhTudkw_draw_0{
+    0%{
+        stroke-dashoffset: 435;
+    }
+    
+    100%{ 
+        stroke-dashoffset: 0;
+    }
+}
