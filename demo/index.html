@@ -1,15 +1,15 @@
 <html lang="pl-PL">
 
 <head>
+    <script src="getPublications.js" defer></script>
     <script src="index.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>dr hab. Mirosław Żelazny</title>
     <link rel="stylesheet" href="style.css">
-    <link href="./icons/css/open-iconic.css" rel="stylesheet">
+    <link href="./data/icons/css/open-iconic.css" rel="stylesheet">
 </head>
-S
 <body>
     <div>
         <div id="loading">
@@ -102,6 +102,10 @@ S
                             </tr>
                         </tbody>
                     </table>
+                    <div class="informationModal" id="publicationsModal">
+                        Przewiń w prawo, aby zobaczyć więcej
+                        <span class="oi" data-glyph="arrow-right" title="Scroll right to see more"></span>
+                    </div>
                 </div>
                 <div class="sidePageContent" id="conferences_content" style="display: none">
                     <header>

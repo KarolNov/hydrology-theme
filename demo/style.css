@@ -19,12 +19,12 @@
 }
 @font-face {
   font-family: interRegular;
-  src: url("./fonts/Inter (OTF)/Inter-Regular.otf");
+  src: url("./data/fonts/Inter (OTF)/Inter-Regular.otf");
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   body {
-    background: url("./backgroundPortait.jpg") no-repeat center center fixed;
+    background: url("./data/backgroundPortait.jpg") no-repeat center center fixed;
   }
 
   header .name {
@@ -40,7 +40,7 @@
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   body {
-    background: url("./backgroundPortait.jpg") no-repeat center center fixed;
+    background: url("./data/backgroundPortait.jpg") no-repeat center center fixed;
   }
 
   header .name {
@@ -56,7 +56,7 @@
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   body {
-    background: url("./background.jpg") no-repeat center center fixed;
+    background: url("./data/background.jpg") no-repeat center center fixed;
   }
 
   header .name {
@@ -72,7 +72,7 @@
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   body {
-    background: url("./background.jpg") no-repeat center center fixed;
+    background: url("./data/background.jpg") no-repeat center center fixed;
   }
 
   header .name {
@@ -88,7 +88,7 @@
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   body {
-    background: url("./background.jpg") no-repeat center center fixed;
+    background: url("./data/background.jpg") no-repeat center center fixed;
   }
 
   header .name {
@@ -129,6 +129,19 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.informationModal {
+  position: fixed;
+  top: 30vh;
+  left: 7.5vw;
+  width: 85vw;
+  background: #b8d6cc;
+  opacity: 0;
+  z-index: 1;
+  text-align: center;
+  display: none;
+  transition: opacity ease-out 1600ms;
 }
 
 .mainContainer {
