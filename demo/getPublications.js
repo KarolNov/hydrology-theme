@@ -2,7 +2,7 @@
 const publicationsObj = {};
 
 //fetch data from txt file
-fetch("http://127.0.0.1:8080/data/publications/webOfScience.txt")
+fetch("http://localhost:8080/demo/data/publications/webOfScience.txt")
 .then( response => response.text() )
 .then( text => {
     //create array in proper key in the publication object
@@ -72,4 +72,6 @@ fetch("http://127.0.0.1:8080/data/publications/webOfScience.txt")
 
         publicationsObj.webOfScience.push(obj);
     })
+
+    console.log(publicationsObj)
 })

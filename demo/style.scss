@@ -2,6 +2,12 @@
 @import 'loadingAnimation';
 @import 'mixins';
 @import 'fonts';
+
+
+.tiles {
+    display: none;
+}
+
 /* Extra small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 600px) {
@@ -20,6 +26,14 @@
 
         & .secondary {
             font-size: 0.6rem !important;
+        }
+    }
+
+    .menu{
+        height: calc(100% - 11rem) !important;
+        .nav{
+            text-align: left !important;
+            font-size: 1rem !important;
         }
     }
 }
@@ -113,6 +127,104 @@
 
     .menu {
         text-align: center !important;
+        display: flex;
+        height: calc(100% - 12rem);
+        @include flexbox();
+        @include flex-direction(column);
+        & .nav {
+            font-size: 2rem;
+            @include flexbox();
+            @include flex(1);
+            @include justify-content(center);
+            @include align-items(center);
+        }
+    }
+}
+
+/* Extra extra large devices (large desktops, 2048px and up) */
+
+@media only screen and (min-width: 2046px) {
+    body {
+        background: url("./data/background.jpg") no-repeat center center fixed;
+        font-size: 32px;
+    }
+
+    #mainPage {
+        @include flex-direction(row !important);
+        @include flex-wrap(wrap !important);
+    }
+
+    header {
+        width: 100%;
+
+        & .name {
+            font-size: 4rem !important;
+        }
+
+        & .primary {
+            font-size: 2rem !important;
+        }
+
+        & .secondary {
+            font-size: 2rem !important;
+        }
+    }
+
+    .menu {
+        text-align: center !important;
+        width: 50% !important;
+        display: flex;
+        @include flexbox();
+        @include flex-direction(column);
+        & .nav {
+            font-size: 4rem !important;
+            @include flexbox();
+            @include flex(1);
+            @include justify-content(center);
+            @include align-items(center);
+        }
+    }
+
+    .tiles {
+        @include flexbox();
+        @include flex-direction(column);
+        @include justify-content(center);
+        width: 50%;
+        height: calc(100% - 14rem);
+        @include flex(1);
+
+        .tile_row {
+            @include flexbox();
+            @include flex-direction(row);
+            @include flex-wrap(wrap);
+            @include flex(1);
+
+            .tile {
+                box-sizing: border-box;
+                overflow: hidden;
+                width: 30% !important;
+                height: 33.3%;
+
+                &.wide {
+                    width: 35% !important;
+                }
+
+                & img {
+                    height: 100%;
+                    filter: blur(3px);
+                    &:hover {
+                        cursor: pointer;
+                        filter: blur(0);
+                    }
+                }
+
+                border: 3px solid $darkGreen;
+                transition: all 500ms ease-in-out;
+
+                
+
+            }
+        }
     }
 }
 
@@ -167,17 +279,16 @@ body {
     overflow: hidden;
 
     header {
+        align-self: flex-start;
         box-sizing: content-box;
         min-height: auto;
-        height: 100px;
         width: 100%;
         max-width: inherit;
         text-align: center;
-        margin: 0 auto;
-        margin-bottom: 1rem;
+        margin: 5rem auto;
 
         & .name {
-            margin-bottom: 0;
+            margin: 0;
             font-weight: 800;
         }
 
@@ -196,6 +307,7 @@ body {
         padding: 0;
         transition: all ease-in 800ms;
         height: 100%;
+
         &.hidden {
             margin-left: -200%;
             padding-right: 200%;
@@ -208,7 +320,7 @@ body {
 
         @include flexbox();
         @include flex-direction(column);
-        @include justify-content(center);
+        @include justify-content(flex-start);
 
         //background 
         & ::after {
@@ -226,7 +338,16 @@ body {
         .menu {
             text-align: left;
             width: 100%;
+            height: calc(100% - 12rem);
+            display: flex;
+            @include flexbox();
+            @include flex-direction(column);
             .nav {
+                font-size: 2rem;
+                @include flexbox();
+                @include flex(1);
+                @include justify-content(center);
+                @include align-items(center);
                 position: relative;
                 width: calc(100% - 22px);
                 padding: 10px 10px;
@@ -244,6 +365,7 @@ body {
                 }
 
                 &:hover {
+                    cursor: pointer;
                     .oi {
                         right: 1%;
                     }
@@ -260,6 +382,7 @@ body {
         &.shown {
             margin-left: 0;
         }
+
         height: 100%;
         transition: all ease-in 800ms;
         position: absolute;
@@ -273,6 +396,7 @@ body {
             width: inherit;
             overflow: auto;
             height: 100%;
+
             header {
                 .nav {
                     position: relative;
@@ -308,9 +432,9 @@ body {
             }
 
             table {
-                font-size: 0.8rem;
+                font-size: 1rem;
                 border-collapse: collapse;
-
+                width: 100%;
                 td,
                 th {
                     border: 1px solid #dddddd;
@@ -326,32 +450,6 @@ body {
             @include flexbox();
             @include flex-direction(row);
             @include flex-wrap(wrap);
-        }
-    }
-}
-
-.tiles {
-    @include flexbox();
-    @include flex-direction(column);
-    @include justify-content(center);
-    width: 100%;
-    @include flex(1);
-
-    .tile_row {
-        @include flexbox();
-        @include flex-direction(row);
-        @include flex-wrap(wrap);
-        @include flex(1);
-
-        .tile {
-            box-sizing: border-box;
-            width: 20% !important;
-
-            &.wide {
-                width: 30% !important;
-            }
-            border-collapse: collapse;
-            border: 1px solid $darkGreen;
         }
     }
 }
