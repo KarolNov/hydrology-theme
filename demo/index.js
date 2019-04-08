@@ -53,4 +53,18 @@ window.onload = () => {
         };
     })
 
+    const tabs = Array.from(document.getElementsByClassName("tab"));
+    console.log(tabs);
+    tabs.forEach(el=>{
+        console.log(el);
+        el.onclick = (e)=>{
+            Array.from(el.getElementsByTagName('span')).forEach(el=>{
+                el.attributes['data-glyph'].value = el.attributes['data-glyph'].value === "chevron-bottom" ? "chevron-top" : "chevron-bottom";
+            })
+            let target = e.target.attributes.target.nodeValue;
+            target = document.getElementById(target);
+            target.style.height = target.style.height==="0" ? "fit-content" : "0";
+            target.style.display = target.style.display==="table" ? "none" : "table";
+        }
+    })
 }

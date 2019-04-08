@@ -31,19 +31,28 @@
                 </header>
                 <div class="tiles">
                     <div class="tile_row">
-                        <div class="tile"><img src="./data/media/gallery0.jpg" alt="opis" title="Kliknij, aby obejrzeć"/></div>
-                        <div class="tile wide"><img src="./data/media/gallery1.jpg" alt="opis" title="Kliknij, aby obejrzeć"/></div>
-                        <div class="tile wide"><img src="./data/media/gallery2.jpg" alt="opis" title="Kliknij, aby obejrzeć"/></div>
+                        <div class="tile"><img src="./data/media/gallery0.jpg" alt="opis"
+                                title="Kliknij, aby obejrzeć" /></div>
+                        <div class="tile wide"><img src="./data/media/gallery1.jpg" alt="opis"
+                                title="Kliknij, aby obejrzeć" /></div>
+                        <div class="tile wide"><img src="./data/media/gallery2.jpg" alt="opis"
+                                title="Kliknij, aby obejrzeć" /></div>
                     </div>
                     <div class="tile_row">
-                        <div class="tile wide"><img src="./data/media/gallery3.jpg" alt="opis" title="Kliknij, aby obejrzeć"/></div>
-                        <div class="tile wide"><img src="./data/media/gallery4.jpg" alt="opis" title="Kliknij, aby obejrzeć"/></div>
-                        <div class="tile"><img src="./data/media/gallery5.jpg" alt="opis" title="Kliknij, aby obejrzeć"/></div>
+                        <div class="tile wide"><img src="./data/media/gallery3.jpg" alt="opis"
+                                title="Kliknij, aby obejrzeć" /></div>
+                        <div class="tile wide"><img src="./data/media/gallery4.jpg" alt="opis"
+                                title="Kliknij, aby obejrzeć" /></div>
+                        <div class="tile"><img src="./data/media/gallery5.jpg" alt="opis"
+                                title="Kliknij, aby obejrzeć" /></div>
                     </div>
                     <div class="tile_row">
-                        <div class="tile"><img src="./data/media/gallery1.jpg" alt="opis" title="Kliknij, aby obejrzeć"/></div>
-                        <div class="tile wide"><img src="./data/media/gallery0.jpg" alt="opis" title="Kliknij, aby obejrzeć"/></div>
-                        <div class="tile wide"><img src="./data/media/gallery4.jpg" alt="opis" title="Kliknij, aby obejrzeć"/></div>
+                        <div class="tile"><img src="./data/media/gallery1.jpg" alt="opis"
+                                title="Kliknij, aby obejrzeć" /></div>
+                        <div class="tile wide"><img src="./data/media/gallery0.jpg" alt="opis"
+                                title="Kliknij, aby obejrzeć" /></div>
+                        <div class="tile wide"><img src="./data/media/gallery4.jpg" alt="opis"
+                                title="Kliknij, aby obejrzeć" /></div>
                     </div>
                 </div>
                 <div class="menu">
@@ -95,31 +104,175 @@
                             Przykładowy układ strony z publikacjami
                         </h3>
                     </header>
-                    <table id="publicationsTable">
-                        <thead>
-                            <th>Rok publikacji</th>
-                            <th>Tytuł</th>
-                            <th>Autorzy</th>
-                            <th>Wydawnictwo</th>
-                            <th>Numer DOI</th>
-                            <th>Punkty MNiSW</th>
-                            <th>Punkty IF</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>2018</td>
-                                <td>Intra-annual groundwater levels and water temperature patterns in raised bogs
-                                    affected
-                                    by human impact in mountain areas in Poland.</td>
-                                <td>Drewnik M., Rajwa-Kuligiewicz A., Stolarczyk M., Kucharzyk S., <b>Żelazny M.</b>
-                                </td>
-                                <td>Science of The Total Environment 624: 991–1003.</td>
-                                <td>doi:10.1016/ j.scitotenv.2017.12.203</td>
-                                <td>40 pkt.</td>
-                                <td>IF<sub>5 year</sub>: 4,984</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <h3 target="webOfScience" class="tab">
+                        <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
+                        Czasopisma znajdujące się na Web of Science (JCR)
+                        <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
+                    </h3>
+                    <div id="webOfScience">
+                        <table id="publicationsTable">
+                            <thead>
+                                <th>Rok publikacji</th>
+                                <th>Tytuł</th>
+                                <th>Autorzy</th>
+                                <th>Wydawnictwo</th>
+                                <th>Numer DOI</th>
+                                <th>Punkty MNiSW</th>
+                                <th>Punkty IF</th>
+                            </thead>
+                            <tbody>
+                                <!-- injected by script -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3 target="outOfWebOfScience" class="tab">
+                        <span class="oi" data-glyph="chevron-bottom" title="show oOWoS"></span>
+                        Czasopisma znajdujące się poza Web of Science (JCR)
+                        <span class="oi" data-glyph="chevron-bottom" title="show oOWoS"></span>
+                    </h3>
+                    <div id="outOfWebOfScience">
+                        <table>
+                            <thead>
+                                <th>Rok publikacji</th>
+                                <th>Tytuł</th>
+                                <th>Autorzy</th>
+                                <th>Wydawnictwo</th>
+                                <th>Numer DOI</th>
+                                <th>Punkty MNiSW</th>
+                                <th>Punkty IF</th>
+                            </thead>
+                            <tbody>
+                                <!-- injected by script -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3 target="chapters" class="tab">
+                        <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
+                        Rozdziały w recenzowanych monografiach naukowych i
+                        wydawnictwach zbiorowych
+                        <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
+                    </h3>
+                    <div id="chapters">
+                        <table>
+                            <thead>
+                                <th>Rok publikacji</th>
+                                <th>Tytuł</th>
+                                <th>Autorzy</th>
+                                <th>Wydawnictwo</th>
+                                <th>Numer DOI</th>
+                                <th>Punkty MNiSW</th>
+                                <th>Punkty IF</th>
+                            </thead>
+                            <tbody>
+                                <!-- injected by script -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3 target="maps" class="tab">
+                        <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
+                        Oryginalne mapy
+                        <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
+                    </h3>
+                    <div id="maps">
+                        <table>
+                            <thead>
+                                <th>Rok publikacji</th>
+                                <th>Tytuł</th>
+                                <th>Autorzy</th>
+                                <th>Wydawnictwo</th>
+                                <th>Numer DOI</th>
+                                <th>Punkty MNiSW</th>
+                                <th>Punkty IF</th>
+                            </thead>
+                            <tbody>
+                                <!-- injected by script -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3 target="popular" class="tab">
+                        <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
+                        Popularnonaukowe
+                        <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
+                    </h3>
+                    <div id="popular">
+                        <table>
+                            <thead>
+                                <th>Rok publikacji</th>
+                                <th>Tytuł</th>
+                                <th>Autorzy</th>
+                                <th>Wydawnictwo</th>
+                                <th>Numer DOI</th>
+                                <th>Punkty MNiSW</th>
+                                <th>Punkty IF</th>
+                            </thead>
+                            <tbody>
+                                <!-- injected by script -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3 target="monograph" class="tab">
+                        <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
+                        Monografia
+                        <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
+                    </h3>
+                    <div id="monograph">
+                        <table>
+                            <thead>
+                                <th>Rok publikacji</th>
+                                <th>Tytuł</th>
+                                <th>Autorzy</th>
+                                <th>Wydawnictwo</th>
+                                <th>Numer DOI</th>
+                                <th>Punkty MNiSW</th>
+                                <th>Punkty IF</th>
+                            </thead>
+                            <tbody>
+                                <!-- injected by script -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3 target="chapters_2" class="tab">
+                        <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
+                        Rozdziały w recenzowanych materiałach konferencyjnych
+                        <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
+                    </h3>
+                    <div id="chapters_2">
+                        <table>
+                            <thead>
+                                <th>Rok publikacji</th>
+                                <th>Tytuł</th>
+                                <th>Autorzy</th>
+                                <th>Wydawnictwo</th>
+                                <th>Numer DOI</th>
+                                <th>Punkty MNiSW</th>
+                                <th>Punkty IF</th>
+                            </thead>
+                            <tbody>
+                                <!-- injected by script -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3 target="other" class="tab">
+                        <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
+                        Inne artykuły naukowe
+                        <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
+                    </h3>
+                    <div id="other">
+                        <table>
+                            <thead>
+                                <th>Rok publikacji</th>
+                                <th>Tytuł</th>
+                                <th>Autorzy</th>
+                                <th>Wydawnictwo</th>
+                                <th>Numer DOI</th>
+                                <th>Punkty MNiSW</th>
+                                <th>Punkty IF</th>
+                            </thead>
+                            <tbody>
+                                <!-- injected by script -->
+                            </tbody>
+                        </table>
+                    </div>
                     <div class="informationModal" id="publicationsModal">
                         Przewiń w prawo, aby zobaczyć więcej
                         <span class="oi" data-glyph="arrow-right" title="Scroll right to see more"></span>

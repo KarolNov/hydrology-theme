@@ -125,9 +125,15 @@
         }
     }
 
+    #mainPage {
+        @include flex-direction(row !important);
+        @include flex-wrap(wrap !important);
+    }
+
     .menu {
         text-align: center !important;
         display: flex;
+        width: 50% !important;
         height: calc(100% - 12rem);
         @include flexbox();
         @include flex-direction(column);
@@ -139,11 +145,51 @@
             @include align-items(center);
         }
     }
+
+    .tiles {
+        @include flexbox();
+        @include flex-direction(column);
+        @include justify-content(center);
+        width: 50%;
+        height: calc(100% - 12rem);
+        @include flex(1);
+
+        .tile_row {
+            @include flexbox();
+            @include flex-direction(row);
+            @include flex-wrap(wrap);
+            @include flex(1);
+
+            .tile {
+                box-sizing: border-box;
+                overflow: hidden;
+                width: 30% !important;
+                height: 33.3%;
+
+                &.wide {
+                    width: 35% !important;
+                }
+
+                & img {
+                    height: 100%;
+                    filter: blur(3px);
+                    &:hover {
+                        cursor: pointer;
+                        filter: blur(0);
+                    }
+                }
+
+                border: 3px solid $darkGreen;
+                transition: all 500ms ease-in-out;
+
+            }
+        }
+    }
 }
 
 /* Extra extra large devices (large desktops, 2048px and up) */
 
-@media only screen and (min-width: 2046px) {
+@media only screen and (min-width: 2048px) {
     body {
         background: url("./data/background.jpg") no-repeat center center fixed;
         font-size: 32px;
@@ -219,9 +265,7 @@
                 }
 
                 border: 3px solid $darkGreen;
-                transition: all 500ms ease-in-out;
-
-                
+                transition: all 500ms ease-in-out;   
 
             }
         }
@@ -398,6 +442,7 @@ body {
             height: 100%;
 
             header {
+                margin: 0 auto 5rem 0;
                 .nav {
                     position: relative;
                     width: calc(100% - 22px);
@@ -430,7 +475,17 @@ body {
                     margin-top: 0.4rem !important;
                 }
             }
-
+            .tab{
+                text-align: center;
+                padding: 1rem 0;
+                border: 1px solid $darkGreen;
+                margin: 0;
+            }
+            #webOfScience, #outOfWebOfScience, #chapters, #chapters_2, #maps, #popular, #monograph, #other{
+                height: 0;
+                overflow: hidden;
+                transition: all 1000ms ease-in-out;
+            }
             table {
                 font-size: 1rem;
                 border-collapse: collapse;

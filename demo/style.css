@@ -113,9 +113,21 @@
     font-size: 1rem !important;
   }
 
+  #mainPage {
+    -webkit-flex-direction: row !important;
+    -moz-flex-direction: row !important;
+    -ms-flex-direction: row !important;
+    flex-direction: row !important;
+    -webkit-flex-wrap: wrap !important;
+    -moz-flex-wrap: wrap !important;
+    -ms-flex-wrap: wrap !important;
+    flex-wrap: wrap !important;
+  }
+
   .menu {
     text-align: center !important;
     display: flex;
+    width: 50% !important;
     height: calc(100% - 12rem);
     display: -webkit-box;
     display: -moz-box;
@@ -149,9 +161,72 @@
     -ms-align-items: center;
     align-items: center;
   }
+
+  .tiles {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    width: 50%;
+    height: calc(100% - 12rem);
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+  .tiles .tile_row {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+  .tiles .tile_row .tile {
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 30% !important;
+    height: 33.3%;
+    border: 3px solid #4b8b6c;
+    transition: all 500ms ease-in-out;
+  }
+  .tiles .tile_row .tile.wide {
+    width: 35% !important;
+  }
+  .tiles .tile_row .tile img {
+    height: 100%;
+    filter: blur(3px);
+  }
+  .tiles .tile_row .tile img:hover {
+    cursor: pointer;
+    filter: blur(0);
+  }
 }
 /* Extra extra large devices (large desktops, 2048px and up) */
-@media only screen and (min-width: 2046px) {
+@media only screen and (min-width: 2048px) {
   body {
     background: url("./data/background.jpg") no-repeat center center fixed;
     font-size: 32px;
@@ -482,6 +557,9 @@ body {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
+.mainContainer #sidePage .sidePageContent header {
+  margin: 0 auto 5rem 0;
+}
 .mainContainer #sidePage .sidePageContent header .nav {
   position: relative;
   width: calc(100% - 22px);
@@ -505,6 +583,17 @@ body {
 }
 .mainContainer #sidePage .sidePageContent header .name {
   margin-top: 0.4rem !important;
+}
+.mainContainer #sidePage .sidePageContent .tab {
+  text-align: center;
+  padding: 1rem 0;
+  border: 1px solid #4b8b6c;
+  margin: 0;
+}
+.mainContainer #sidePage .sidePageContent #webOfScience, .mainContainer #sidePage .sidePageContent #outOfWebOfScience, .mainContainer #sidePage .sidePageContent #chapters, .mainContainer #sidePage .sidePageContent #chapters_2, .mainContainer #sidePage .sidePageContent #maps, .mainContainer #sidePage .sidePageContent #popular, .mainContainer #sidePage .sidePageContent #monograph, .mainContainer #sidePage .sidePageContent #other {
+  height: 0;
+  overflow: hidden;
+  transition: all 1000ms ease-in-out;
 }
 .mainContainer #sidePage .sidePageContent table {
   font-size: 1rem;

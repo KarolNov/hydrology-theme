@@ -72,6 +72,21 @@ fetch("http://localhost:8080/demo/data/publications/webOfScience.txt")
 
         publicationsObj.webOfScience.push(obj);
     })
-
+    let tbody = document.getElementById("webOfScience").getElementsByTagName('tbody')[0];
+    let innerHTML = "";
+    publicationsObj.webOfScience.forEach(el=>{
+        innerHTML = innerHTML.concat(`
+            <tr>
+                <td>${el.date}</td>
+                <td>${el.title}</td>
+                <td>${el.authors.join(", ")}</td>
+                <td>${el.magazine}</td>
+                <td>${el.doi ? el.doi : "-"}</td>
+                <td>${el.mnisw ? el.mnisw : "-"}</td>
+                <td>${el.if ? el.if : "-"}</td>
+            </tr>
+        `)
+    })
+    tbody.innerHTML = innerHTML;
     console.log(publicationsObj)
 })
