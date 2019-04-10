@@ -27,28 +27,6 @@ window.onload = () => {
                 //animate transition between pages
                 document.getElementById('mainPage').className = 'hidden';
                 document.getElementById('sidePage').className = 'shown';
-                //if there is a table to show inform user about scroll feature
-                if (targetId === "publications") {
-                    let table = document.getElementById("publicationsTable");
-                    //check if scroll is needed
-                    if (table.parentElement.offsetWidth < table.offsetWidth) {
-                        console.log("scroll needed")
-                        //after the site is fully visible show information modal and start fading it
-                        let inform = document.getElementById("publicationsModal");
-                        inform.style.display = "block";
-                        setTimeout(() => {
-                            inform.style.opacity = 1;
-                        }, 800);
-                        //then show it for 2 sec
-                        setTimeout(() => {
-                            inform.style.opacity = 0;
-                        }, 2800);
-                        //and hide it completly after transition is done
-                        setTimeout(() => {
-                            inform.style.display = "none";
-                        }, 3600);
-                    }
-                }
             }
         };
     })
@@ -65,6 +43,27 @@ window.onload = () => {
             target = document.getElementById(target);
             target.style.height = target.style.height==="0" ? "fit-content" : "0";
             target.style.display = target.style.display==="table" ? "none" : "table";
+            if(target.style.display === "table"){
+                let table = document.getElementById("publicationsTable");
+                    //check if scroll is needed
+                    if (el.parentElement.offsetWidth < target.offsetWidth) {
+                        console.log("scroll needed")
+                        //after the site is fully visible show information modal and start fading it
+                        let inform = document.getElementById("publicationsModal");
+                        inform.style.display = "block";
+                        setTimeout(() => {
+                            inform.style.opacity = 1;
+                        }, 800);
+                        //then show it for 2 sec
+                        setTimeout(() => {
+                            inform.style.opacity = 0;
+                        }, 2800);
+                        //and hide it completly after transition is done
+                        setTimeout(() => {
+                            inform.style.display = "none";
+                        }, 3600);
+                    }
+            }
         }
     })
 }

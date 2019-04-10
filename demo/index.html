@@ -1,8 +1,6 @@
 <html lang="pl-PL">
 
 <head>
-    <script src="getPublications.js" defer></script>
-    <script src="index.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -109,16 +107,31 @@
                         Czasopisma znajdujące się na Web of Science (JCR)
                         <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
                     </h3>
-                    <div id="webOfScience">
+                    <div class="tableContainer" id="webOfScience">
                         <table id="publicationsTable">
                             <thead>
-                                <th>Rok publikacji</th>
-                                <th>Tytuł</th>
+                                <th onClick="sortBy('date', 'webOfScience', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="date"></span>
+                                    Rok publikacji
+                                </th>
+                                <th onClick="sortBy('title', 'webOfScience', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="title"></span>
+                                    Tytuł
+                                </th>
                                 <th>Autorzy</th>
-                                <th>Wydawnictwo</th>
+                                <th onClick="sortBy('magazine', 'webOfScience', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="magazine"></span>
+                                    Wydawnictwo
+                                </th>
                                 <th>Numer DOI</th>
-                                <th>Punkty MNiSW</th>
-                                <th>Punkty IF</th>
+                                <th onClick="sortBy('mnisw', 'webOfScience', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="mnisw"></span>
+                                    Punkty MNiSW
+                                </th>
+                                <th onClick="sortBy('if', 'webOfScience', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="if"></span>
+                                    Punkty IF
+                                </th>
                             </thead>
                             <tbody>
                                 <!-- injected by script -->
@@ -130,16 +143,31 @@
                         Czasopisma znajdujące się poza Web of Science (JCR)
                         <span class="oi" data-glyph="chevron-bottom" title="show oOWoS"></span>
                     </h3>
-                    <div id="outOfWebOfScience">
+                    <div class="tableContainer" id="outOfWebOfScience">
                         <table>
                             <thead>
-                                <th>Rok publikacji</th>
-                                <th>Tytuł</th>
+                                <th onClick="sortBy('date', 'outOfWebOfScience', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="date"></span>
+                                    Rok publikacji
+                                </th>
+                                <th onClick="sortBy('title', 'outOfWebOfScience', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="title"></span>
+                                    Tytuł
+                                </th>
                                 <th>Autorzy</th>
-                                <th>Wydawnictwo</th>
+                                <th onClick="sortBy('magazine', 'outOfWebOfScience', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="magazine"></span>
+                                    Wydawnictwo
+                                </th>
                                 <th>Numer DOI</th>
-                                <th>Punkty MNiSW</th>
-                                <th>Punkty IF</th>
+                                <th onClick="sortBy('mnisw', 'outOfWebOfScience', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="mnisw"></span>
+                                    Punkty MNiSW/KBN
+                                </th>
+                                <th onClick="sortBy('if', 'outOfWebOfScience', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="if"></span>
+                                    Punkty IF
+                                </th>
                             </thead>
                             <tbody>
                                 <!-- injected by script -->
@@ -152,16 +180,22 @@
                         wydawnictwach zbiorowych
                         <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
                     </h3>
-                    <div id="chapters">
+                    <div class="tableContainer" id="chapters">
                         <table>
                             <thead>
-                                <th>Rok publikacji</th>
-                                <th>Tytuł</th>
+                                <th onClick="sortBy('date', 'chapters', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="date"></span>
+                                    Rok publikacji
+                                </th>
+                                <th onClick="sortBy('title', 'chapters', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="title"></span>
+                                    Tytuł
+                                </th>
                                 <th>Autorzy</th>
-                                <th>Wydawnictwo</th>
-                                <th>Numer DOI</th>
-                                <th>Punkty MNiSW</th>
-                                <th>Punkty IF</th>
+                                <th onClick="sortBy('magazine', 'chapters', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="magazine"></span>
+                                    Wydawnictwo
+                                </th>
                             </thead>
                             <tbody>
                                 <!-- injected by script -->
@@ -173,16 +207,22 @@
                         Oryginalne mapy
                         <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
                     </h3>
-                    <div id="maps">
+                    <div class="tableContainer" id="maps">
                         <table>
                             <thead>
-                                <th>Rok publikacji</th>
-                                <th>Tytuł</th>
+                                <th onClick="sortBy('date', 'maps', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="date"></span>
+                                    Rok publikacji
+                                </th>
+                                <th onClick="sortBy('title', 'maps', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="title"></span>
+                                    Tytuł
+                                </th>
                                 <th>Autorzy</th>
-                                <th>Wydawnictwo</th>
-                                <th>Numer DOI</th>
-                                <th>Punkty MNiSW</th>
-                                <th>Punkty IF</th>
+                                <th onClick="sortBy('magazine', 'maps', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="magazine"></span>
+                                    Wydawnictwo
+                                </th>
                             </thead>
                             <tbody>
                                 <!-- injected by script -->
@@ -194,16 +234,22 @@
                         Popularnonaukowe
                         <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
                     </h3>
-                    <div id="popular">
+                    <div class="tableContainer" id="popular">
                         <table>
                             <thead>
-                                <th>Rok publikacji</th>
-                                <th>Tytuł</th>
+                                <th onClick="sortBy('date', 'popular', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="date"></span>
+                                    Rok publikacji
+                                </th>
+                                <th onClick="sortBy('title', 'popular', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="title"></span>
+                                    Tytuł
+                                </th>
                                 <th>Autorzy</th>
-                                <th>Wydawnictwo</th>
-                                <th>Numer DOI</th>
-                                <th>Punkty MNiSW</th>
-                                <th>Punkty IF</th>
+                                <th onClick="sortBy('magazine', 'popular', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="magazine"></span>
+                                    Wydawnictwo
+                                </th>
                             </thead>
                             <tbody>
                                 <!-- injected by script -->
@@ -215,16 +261,22 @@
                         Monografia
                         <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
                     </h3>
-                    <div id="monograph">
+                    <div class="tableContainer" id="monograph">
                         <table>
                             <thead>
-                                <th>Rok publikacji</th>
-                                <th>Tytuł</th>
+                                <th onClick="sortBy('date', 'monograph', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="date"></span>
+                                    Rok publikacji
+                                </th>
+                                <th onClick="sortBy('title', 'monograph', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="title"></span>
+                                    Tytuł
+                                </th>
                                 <th>Autorzy</th>
-                                <th>Wydawnictwo</th>
-                                <th>Numer DOI</th>
-                                <th>Punkty MNiSW</th>
-                                <th>Punkty IF</th>
+                                <th onClick="sortBy('magazine', 'monograph', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="magazine"></span>
+                                    Wydawnictwo
+                                </th>
                             </thead>
                             <tbody>
                                 <!-- injected by script -->
@@ -236,16 +288,22 @@
                         Rozdziały w recenzowanych materiałach konferencyjnych
                         <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
                     </h3>
-                    <div id="chapters_2">
+                    <div class="tableContainer" id="chapters_2">
                         <table>
                             <thead>
-                                <th>Rok publikacji</th>
-                                <th>Tytuł</th>
+                                <th onClick="sortBy('date', 'chapters_2', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="date"></span>
+                                    Rok publikacji
+                                </th>
+                                <th onClick="sortBy('title', 'chapters_2', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="title"></span>
+                                    Tytuł
+                                </th>
                                 <th>Autorzy</th>
-                                <th>Wydawnictwo</th>
-                                <th>Numer DOI</th>
-                                <th>Punkty MNiSW</th>
-                                <th>Punkty IF</th>
+                                <th onClick="sortBy('magazine', 'chapters_2', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="magazine"></span>
+                                    Wydawnictwo
+                                </th>
                             </thead>
                             <tbody>
                                 <!-- injected by script -->
@@ -257,16 +315,22 @@
                         Inne artykuły naukowe
                         <span class="oi" data-glyph="chevron-bottom" title="show WoS"></span>
                     </h3>
-                    <div id="other">
+                    <div class="tableContainer" id="other">
                         <table>
                             <thead>
-                                <th>Rok publikacji</th>
-                                <th>Tytuł</th>
+                                <th onClick="sortBy('date', 'other', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="date"></span>
+                                    Rok publikacji
+                                </th>
+                                <th onClick="sortBy('title', 'other', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="title"></span>
+                                    Tytuł
+                                </th>
                                 <th>Autorzy</th>
-                                <th>Wydawnictwo</th>
-                                <th>Numer DOI</th>
-                                <th>Punkty MNiSW</th>
-                                <th>Punkty IF</th>
+                                <th onClick="sortBy('magazine', 'other', publicationsObj)">
+                                    <span class="oi" data-glyph="chevron-bottom" data-sort="magazine"></span>
+                                    Wydawnictwo
+                                </th>
                             </thead>
                             <tbody>
                                 <!-- injected by script -->
@@ -293,6 +357,9 @@
             </div>
         </div>
     </div>
+
+    <script src="getPublications.js" defer></script>
+    <script src="index.js" defer></script>
 </body>
 
 </html>

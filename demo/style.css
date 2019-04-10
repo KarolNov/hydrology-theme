@@ -590,23 +590,41 @@ body {
   border: 1px solid #4b8b6c;
   margin: 0;
 }
-.mainContainer #sidePage .sidePageContent #webOfScience, .mainContainer #sidePage .sidePageContent #outOfWebOfScience, .mainContainer #sidePage .sidePageContent #chapters, .mainContainer #sidePage .sidePageContent #chapters_2, .mainContainer #sidePage .sidePageContent #maps, .mainContainer #sidePage .sidePageContent #popular, .mainContainer #sidePage .sidePageContent #monograph, .mainContainer #sidePage .sidePageContent #other {
+.mainContainer #sidePage .sidePageContent #webOfScience,
+.mainContainer #sidePage .sidePageContent #outOfWebOfScience,
+.mainContainer #sidePage .sidePageContent #chapters,
+.mainContainer #sidePage .sidePageContent #chapters_2,
+.mainContainer #sidePage .sidePageContent #maps,
+.mainContainer #sidePage .sidePageContent #popular,
+.mainContainer #sidePage .sidePageContent #monograph,
+.mainContainer #sidePage .sidePageContent #other {
   height: 0;
   overflow: hidden;
   transition: all 1000ms ease-in-out;
 }
-.mainContainer #sidePage .sidePageContent table {
+.mainContainer #sidePage .sidePageContent .tableContainer {
+  min-width: 100%;
+}
+.mainContainer #sidePage .sidePageContent .tableContainer table {
   font-size: 1rem;
   border-collapse: collapse;
-  width: 100%;
+  min-width: 100%;
 }
-.mainContainer #sidePage .sidePageContent table td,
-.mainContainer #sidePage .sidePageContent table th {
+.mainContainer #sidePage .sidePageContent .tableContainer table td,
+.mainContainer #sidePage .sidePageContent .tableContainer table th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
-.mainContainer #sidePage .sidePageContent table tr:nth-child(even) {
+.mainContainer #sidePage .sidePageContent .tableContainer table td:nth-child(1),
+.mainContainer #sidePage .sidePageContent .tableContainer table th:nth-child(1) {
+  text-align: center;
+}
+.mainContainer #sidePage .sidePageContent .tableContainer table td:nth-child(6),
+.mainContainer #sidePage .sidePageContent .tableContainer table th:nth-child(6) {
+  width: 15%;
+}
+.mainContainer #sidePage .sidePageContent .tableContainer table tr:nth-child(even) {
   background-color: #b8d6cc;
 }
 
