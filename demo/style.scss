@@ -133,7 +133,6 @@
 
     .menu {
         text-align: center !important;
-        display: flex;
         width: 50% !important;
         height: calc(100% - 12rem);
         @include flexbox();
@@ -142,7 +141,7 @@
         & .nav {
             font-size: 2rem;
             @include flexbox();
-            @include flex(1);
+            @include flex(1 1 auto);
             @include justify-content(center);
             @include align-items(center);
         }
@@ -154,19 +153,19 @@
         @include justify-content(center);
         width: 50%;
         height: calc(100% - 12rem);
-        @include flex(1);
+        @include flex(1 1 auto);
 
         .tile_row {
             @include flexbox();
             @include flex-direction(row);
             @include flex-wrap(wrap);
-            @include flex(1);
-
+            @include flex(1 1 auto);
+            height: 33%;
             .tile {
                 box-sizing: border-box;
                 overflow: hidden;
                 width: 30% !important;
-                height: 33.3%;
+                height: 100%;
 
                 &.wide {
                     width: 35% !important;
@@ -222,14 +221,13 @@
     .menu {
         text-align: center !important;
         width: 50% !important;
-        display: flex;
         @include flexbox();
         @include flex-direction(column);
 
         & .nav {
             font-size: 4rem !important;
             @include flexbox();
-            @include flex(1);
+            @include flex(1 1 auto);
             @include justify-content(center);
             @include align-items(center);
         }
@@ -241,14 +239,14 @@
         @include justify-content(center);
         width: 50%;
         height: calc(100% - 14rem);
-        @include flex(1);
+        @include flex(1 1 auto);
 
         .tile_row {
             @include flexbox();
             @include flex-direction(row);
             @include flex-wrap(wrap);
-            @include flex(1);
-
+            @include flex(1 1 auto);
+            height: 35%;
             .tile {
                 box-sizing: border-box;
                 overflow: hidden;
@@ -395,7 +393,7 @@ body {
             .nav {
                 font-size: 2rem;
                 @include flexbox();
-                @include flex(1);
+                @include flex(1 1 auto);
                 @include justify-content(center);
                 @include align-items(center);
                 position: relative;
