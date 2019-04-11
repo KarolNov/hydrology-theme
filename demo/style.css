@@ -97,8 +97,8 @@
     font-size: 1rem !important;
   }
 }
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+/* Extra large devices (large laptops and desktops, 1024px and up) */
+@media only screen and (min-width: 1024px) {
   body {
     background: url("./data/background.jpg") no-repeat center center fixed;
   }
@@ -127,7 +127,7 @@
   .menu {
     text-align: center !important;
     width: 50% !important;
-    height: calc(100% - 12rem);
+    height: calc(100% - 12rem - 7px);
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -177,7 +177,7 @@
     justify-content: center;
     -ms-flex-pack: center;
     width: 50%;
-    height: calc(100% - 12rem);
+    height: calc(100% - 12rem - 7px);
     -webkit-box-flex: 1 1 auto;
     -moz-box-flex: 1 1 auto;
     -webkit-flex: 1 1 auto;
@@ -308,7 +308,7 @@
     justify-content: center;
     -ms-flex-pack: center;
     width: 50%;
-    height: calc(100% - 14rem);
+    height: calc(100% - 14rem - 7px);
     -webkit-box-flex: 1 1 auto;
     -moz-box-flex: 1 1 auto;
     -webkit-flex: 1 1 auto;
@@ -470,7 +470,7 @@ body {
 .mainContainer #mainPage .menu {
   text-align: left;
   width: 100%;
-  height: calc(100% - 12rem);
+  height: calc(100% - 12rem - 7px);
   display: flex;
   display: -webkit-box;
   display: -moz-box;

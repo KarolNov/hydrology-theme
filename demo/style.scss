@@ -105,9 +105,9 @@
     }
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* Extra large devices (large laptops and desktops, 1024px and up) */
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1024px) {
     body {
         background: url("./data/background.jpg") no-repeat center center fixed;
     }
@@ -134,7 +134,7 @@
     .menu {
         text-align: center !important;
         width: 50% !important;
-        height: calc(100% - 12rem);
+        height: calc(100% - 12rem - 7px);
         @include flexbox();
         @include flex-direction(column);
 
@@ -152,7 +152,7 @@
         @include flex-direction(column);
         @include justify-content(center);
         width: 50%;
-        height: calc(100% - 12rem);
+        height: calc(100% - 12rem - 7px);
         @include flex(1 1 auto);
 
         .tile_row {
@@ -238,7 +238,7 @@
         @include flex-direction(column);
         @include justify-content(center);
         width: 50%;
-        height: calc(100% - 14rem);
+        height: calc(100% - 14rem - 7px);
         @include flex(1 1 auto);
 
         .tile_row {
@@ -385,7 +385,7 @@ body {
         .menu {
             text-align: left;
             width: 100%;
-            height: calc(100% - 12rem);
+            height: calc(100% - 12rem - 7px);
             display: flex;
             @include flexbox();
             @include flex-direction(column);
